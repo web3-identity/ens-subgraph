@@ -67,6 +67,7 @@ dataSources:
     network: cfxtest
     source:
       abi: Resolver
+      startBlock: 95561700
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -137,35 +138,37 @@ dataSources:
           handler: handleNameRenewed
         - event: "Transfer(indexed address,indexed address,indexed uint256)"
           handler: handleNameTransferred
-  - kind: ethereum/contract
-    name: EthRegistrarControllerOld
-    network: cfxtest
-    source:
-      address: "0x82d5C987c72dFA84b8Bad96DDAe3f7661f8D7180"
-      abi: EthRegistrarControllerOld
-      startBlock: 95561700
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      file: ./src/ethRegistrar.ts
-      entities:
-        - Registration
-      abis:
-        - name: EthRegistrarControllerOld
-          file: ./abis/EthRegistrarControllerOld.json
-      eventHandlers:
-        - event: >-
-            NameRegistered(string,indexed bytes32,indexed
-            address,uint256,uint256)
-          handler: handleNameRegisteredByControllerOld
-        - event: "NameRenewed(string,indexed bytes32,uint256,uint256)"
-          handler: handleNameRenewedByController
+  # - kind: ethereum/contract
+  #   name: EthRegistrarControllerOld
+  #   network: cfxtest
+  #   source:
+  #     address: "0x82d5C987c72dFA84b8Bad96DDAe3f7661f8D7180"
+  #     abi: EthRegistrarControllerOld
+  #     startBlock: 95561700
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.5
+  #     language: wasm/assemblyscript
+  #     file: ./src/ethRegistrar.ts
+  #     entities:
+  #       - Registration
+  #     abis:
+  #       - name: EthRegistrarControllerOld
+  #         file: ./abis/EthRegistrarControllerOld.json
+  #     eventHandlers:
+  #       - event: >-
+  #           NameRegistered(string,indexed bytes32,indexed
+  #           address,uint256,uint256)
+  #         handler: handleNameRegisteredByControllerOld
+  #       - event: "NameRenewed(string,indexed bytes32,uint256,uint256)"
+  #         handler: handleNameRenewedByController
   - kind: ethereum/contract
     name: EthRegistrarController
     network: cfxtest
     source:
       abi: EthRegistrarController
+      address: "0x82d5C987c72dFA84b8Bad96DDAe3f7661f8D7180"
+      startBlock: 95561700
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -188,6 +191,7 @@ dataSources:
     network: cfxtest
     source:
       abi: NameWrapper
+      startBlock: 95561700
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
