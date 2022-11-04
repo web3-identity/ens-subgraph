@@ -29,7 +29,7 @@ import {
 // Import entity types generated from the GraphQL schema
 import { Account, Domain, NameRegistered, NameRenewed, NameTransferred, Registration } from './types/schema'
 
-var rootNode:ByteArray = byteArrayFromHex("93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae")
+var rootNode:ByteArray = byteArrayFromHex("587d09fe5fa45354680537d38145a28b772971e0f293af3ee0c536fc919710fb") // .eth -> .web3
 
 export function handleNameRegistered(event: NameRegisteredEvent): void {
   let account = new Account(event.params.owner.toHex())
