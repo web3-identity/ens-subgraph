@@ -17,9 +17,9 @@ import {
   Transfer as TransferEvent
 } from './types/BaseRegistrar/BaseRegistrar'
 
-import {
+/* import {
   NameRegistered as ControllerNameRegisteredEventOld,
-} from './types/EthRegistrarControllerOld/EthRegistrarControllerOld'
+} from './types/EthRegistrarControllerOld/EthRegistrarControllerOld' */
 
 import {
   NameRegistered as ControllerNameRegisteredEvent,
@@ -61,9 +61,9 @@ export function handleNameRegistered(event: NameRegisteredEvent): void {
   registrationEvent.save()
 }
 
-export function handleNameRegisteredByControllerOld(event: ControllerNameRegisteredEventOld): void {
+/* export function handleNameRegisteredByControllerOld(event: ControllerNameRegisteredEventOld): void {
   setNamePreimage(event.params.name, event.params.label, event.params.cost);
-}
+} */
 
 export function handleNameRegisteredByController(event: ControllerNameRegisteredEvent): void {
   setNamePreimage(event.params.name, event.params.label, event.params.baseCost.plus(event.params.premium))
