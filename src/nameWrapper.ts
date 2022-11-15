@@ -46,7 +46,9 @@ export function handleNameWrapped(event: NameWrappedEvent): void {
   let blockNumber = event.block.number.toI32()
   let transactionID = event.transaction.hash
   let owner = createOrLoadAccount(event.params.owner.toHex())
-  let domain = Domain.load(node.toHex())!
+  let _domain = Domain.load(node.toHex())
+  if (_domain == null) return;  // CNS UPDATE add load failed check
+  let domain = _domain!
 
   if(!domain.labelName){
     domain.labelName = label
