@@ -34,7 +34,7 @@ import {
 } from "./types/schema";
 
 var rootNode: ByteArray = byteArrayFromHex(
-  "93cdeb708b7545dc668eb9280176169d1c33cfd8ed6f04690a0bcc88a93fc4ae"
+  "587d09fe5fa45354680537d38145a28b772971e0f293af3ee0c536fc919710fb"
 );
 
 export function handleNameRegistered(event: NameRegisteredEvent): void {
@@ -53,7 +53,7 @@ export function handleNameRegistered(event: NameRegisteredEvent): void {
   let labelName = ens.nameByHash(label.toHexString());
   if (labelName != null) {
     domain.labelName = labelName;
-    domain.name = labelName + ".eth";
+    domain.name = labelName + ".web3"; // CNS UPDATE
     registration.labelName = labelName;
   }
   domain.save();
@@ -98,7 +98,7 @@ function setNamePreimage(name: string, label: Bytes, cost: BigInt): void {
   let domain = Domain.load(crypto.keccak256(concat(rootNode, label)).toHex())!;
   if (domain.labelName !== name) {
     domain.labelName = name;
-    domain.name = name + ".eth";
+    domain.name = name + ".web3"; // CNS UPDATE
     domain.save();
   }
 
