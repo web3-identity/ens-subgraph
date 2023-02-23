@@ -67,6 +67,8 @@ dataSources:
     network: cfxtest
     source:
       abi: Resolver
+      startBlock: 110315403
+      address: "0x817f6fD4d83E55d27F6CC7717d2B6EeFd10Ec4E0"
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -166,6 +168,8 @@ dataSources:
     network: cfxtest
     source:
       abi: EthRegistrarController
+      startBlock: 110315403
+      address: "0x817f6fD4d83E55d27F6CC7717d2B6EeFd10Ec4E0"
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -188,6 +192,8 @@ dataSources:
     network: cfxtest
     source:
       abi: NameWrapper
+      startBlock: 110315403
+      address: "0x80c166984740F5132104a2024efE3bb3c7af5684"
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
