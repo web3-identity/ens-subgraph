@@ -8,11 +8,11 @@ schema:
 dataSources:
   - kind: ethereum/contract
     name: ENSRegistry
-    network: cfxtest
+    network: cfx
     source:
       address: "0x88A6C3A585E1e0b5F45e4Ed78097ea4221E983FC"
       abi: EnsRegistry
-      startBlock: 110315403
+      startBlock: 66008620
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -62,63 +62,63 @@ dataSources:
   #         handler: handleNewResolverOldRegistry
   #       - event: "NewTTL(indexed bytes32,uint64)"
   #         handler: handleNewTTLOldRegistry
-  - kind: ethereum/contract
-    name: Resolver
-    network: cfxtest
-    source:
-      abi: Resolver
-      startBlock: 110315403  # CNS UPDATE
-      address: "0x817f6fD4d83E55d27F6CC7717d2B6EeFd10Ec4E0"  # CNS UPDATE
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.5
-      language: wasm/assemblyscript
-      file: ./src/resolver.ts
-      entities:
-        - AddrChanged
-        - MulticoinAddrChanged
-        - NameChanged
-        - AbiChanged
-        - PubkeyChanged
-        - Textchanged
-        - ContenthashChanged
-        - InterfaceChanged
-        - AuthorisationChanged
-      abis:
-        - name: Resolver
-          file: ./abis/PublicResolver.json
-      eventHandlers:
-        - event: "ABIChanged(indexed bytes32,indexed uint256)"
-          handler: handleABIChanged
-        - event: "AddrChanged(indexed bytes32,address)"
-          handler: handleAddrChanged
-        - event: "AddressChanged(indexed bytes32,uint256,bytes)"
-          handler: handleMulticoinAddrChanged
-        - event: >-
-            AuthorisationChanged(indexed bytes32,indexed address,indexed
-            address,bool)
-          handler: handleAuthorisationChanged
-        - event: "ContenthashChanged(indexed bytes32,bytes)"
-          handler: handleContentHashChanged
-        - event: "InterfaceChanged(indexed bytes32,indexed bytes4,address)"
-          handler: handleInterfaceChanged
-        - event: "NameChanged(indexed bytes32,string)"
-          handler: handleNameChanged
-        - event: "PubkeyChanged(indexed bytes32,bytes32,bytes32)"
-          handler: handlePubkeyChanged
-        - event: "TextChanged(indexed bytes32,indexed string,string)"
-          handler: handleTextChanged
-        - event: "TextChanged(indexed bytes32,indexed string,string,string)"
-          handler: handleTextChangedWithValue
-        - event: "VersionChanged(indexed bytes32,uint64)"
-          handler: handleVersionChanged
+  # - kind: ethereum/contract
+  #   name: Resolver
+  #   network: cfx
+  #   source:
+  #     abi: Resolver
+  #     startBlock: 66214578  # CNS UPDATE
+  #     # address: "0x80E036113175a73b9D64EA575c938a3a9C468ff7"  # CNS UPDATE
+  #   mapping:
+  #     kind: ethereum/events
+  #     apiVersion: 0.0.5
+  #     language: wasm/assemblyscript
+  #     file: ./src/resolver.ts
+  #     entities:
+  #       - AddrChanged
+  #       - MulticoinAddrChanged
+  #       - NameChanged
+  #       - AbiChanged
+  #       - PubkeyChanged
+  #       - Textchanged
+  #       - ContenthashChanged
+  #       - InterfaceChanged
+  #       - AuthorisationChanged
+  #     abis:
+  #       - name: Resolver
+  #         file: ./abis/PublicResolver.json
+  #     eventHandlers:
+  #       - event: "ABIChanged(indexed bytes32,indexed uint256)"
+  #         handler: handleABIChanged
+  #       - event: "AddrChanged(indexed bytes32,address)"
+  #         handler: handleAddrChanged
+  #       - event: "AddressChanged(indexed bytes32,uint256,bytes)"
+  #         handler: handleMulticoinAddrChanged
+  #       - event: >-
+  #           AuthorisationChanged(indexed bytes32,indexed address,indexed
+  #           address,bool)
+  #         handler: handleAuthorisationChanged
+  #       - event: "ContenthashChanged(indexed bytes32,bytes)"
+  #         handler: handleContentHashChanged
+  #       - event: "InterfaceChanged(indexed bytes32,indexed bytes4,address)"
+  #         handler: handleInterfaceChanged
+  #       - event: "NameChanged(indexed bytes32,string)"
+  #         handler: handleNameChanged
+  #       - event: "PubkeyChanged(indexed bytes32,bytes32,bytes32)"
+  #         handler: handlePubkeyChanged
+  #       - event: "TextChanged(indexed bytes32,indexed string,string)"
+  #         handler: handleTextChanged
+  #       - event: "TextChanged(indexed bytes32,indexed string,string,string)"
+  #         handler: handleTextChangedWithValue
+  #       - event: "VersionChanged(indexed bytes32,uint64)"
+  #         handler: handleVersionChanged
   - kind: ethereum/contract
     name: BaseRegistrar
-    network: cfxtest
+    network: cfx
     source:
       address: "0x8d6F06086592a74197aA6f717d401F6a3E735e25"
       abi: BaseRegistrar
-      startBlock: 110315403
+      startBlock: 66008620
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -165,11 +165,11 @@ dataSources:
   #         handler: handleNameRenewedByController
   - kind: ethereum/contract
     name: EthRegistrarController
-    network: cfxtest
+    network: cfx
     source:
       abi: EthRegistrarController
-      startBlock: 110315403  # CNS UPDATE
-      address: "0x817f6fD4d83E55d27F6CC7717d2B6EeFd10Ec4E0"  # CNS UPDATE
+      startBlock: 66008620  # CNS UPDATE
+      address: "0x896098Bab790FdA552cE93954E76CbD8e2B1Fe0d"  # CNS UPDATE
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -189,11 +189,11 @@ dataSources:
           handler: handleNameRenewedByController
   - kind: ethereum/contract
     name: NameWrapper
-    network: cfxtest
+    network: cfx
     source:
       abi: NameWrapper
-      startBlock: 110315403 # CNS UPDATE
-      address: "0x80c166984740F5132104a2024efE3bb3c7af5684"  # CNS UPDATE
+      startBlock: 66008620 # CNS UPDATE
+      address: "0x86c9Ed9417E696D393f682373E2FDE0cd9b11cFC"  # CNS UPDATE
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
