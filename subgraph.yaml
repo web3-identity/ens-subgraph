@@ -62,83 +62,83 @@ dataSources:
   #         handler: handleNewResolverOldRegistry
   #       - event: "NewTTL(indexed bytes32,uint64)"
   #         handler: handleNewTTLOldRegistry
-  # - kind: ethereum/contract
-  #   name: Resolver
-  #   network: cfx
-  #   source:
-  #     abi: Resolver
-  #     startBlock: 66214578  # CNS UPDATE
-  #     # address: "0x80E036113175a73b9D64EA575c938a3a9C468ff7"  # CNS UPDATE
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.5
-  #     language: wasm/assemblyscript
-  #     file: ./src/resolver.ts
-  #     entities:
-  #       - AddrChanged
-  #       - MulticoinAddrChanged
-  #       - NameChanged
-  #       - AbiChanged
-  #       - PubkeyChanged
-  #       - Textchanged
-  #       - ContenthashChanged
-  #       - InterfaceChanged
-  #       - AuthorisationChanged
-  #     abis:
-  #       - name: Resolver
-  #         file: ./abis/PublicResolver.json
-  #     eventHandlers:
-  #       - event: "ABIChanged(indexed bytes32,indexed uint256)"
-  #         handler: handleABIChanged
-  #       - event: "AddrChanged(indexed bytes32,address)"
-  #         handler: handleAddrChanged
-  #       - event: "AddressChanged(indexed bytes32,uint256,bytes)"
-  #         handler: handleMulticoinAddrChanged
-  #       - event: >-
-  #           AuthorisationChanged(indexed bytes32,indexed address,indexed
-  #           address,bool)
-  #         handler: handleAuthorisationChanged
-  #       - event: "ContenthashChanged(indexed bytes32,bytes)"
-  #         handler: handleContentHashChanged
-  #       - event: "InterfaceChanged(indexed bytes32,indexed bytes4,address)"
-  #         handler: handleInterfaceChanged
-  #       - event: "NameChanged(indexed bytes32,string)"
-  #         handler: handleNameChanged
-  #       - event: "PubkeyChanged(indexed bytes32,bytes32,bytes32)"
-  #         handler: handlePubkeyChanged
-  #       - event: "TextChanged(indexed bytes32,indexed string,string)"
-  #         handler: handleTextChanged
-  #       - event: "TextChanged(indexed bytes32,indexed string,string,string)"
-  #         handler: handleTextChangedWithValue
-  #       - event: "VersionChanged(indexed bytes32,uint64)"
-  #         handler: handleVersionChanged
-  # - kind: ethereum/contract
-  #   name: BaseRegistrar
-  #   network: cfx
-  #   source:
-  #     address: "0x8d6F06086592a74197aA6f717d401F6a3E735e25"
-  #     abi: BaseRegistrar
-  #     startBlock: 66008620
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.5
-  #     language: wasm/assemblyscript
-  #     file: ./src/ethRegistrar.ts
-  #     entities:
-  #       - Registration
-  #       - NameRegistered
-  #       - NameRenewed
-  #       - NameTransferred
-  #     abis:
-  #       - name: BaseRegistrar
-  #         file: ./abis/BaseRegistrar.json
-  #     eventHandlers:
-  #       - event: "NameRegistered(indexed uint256,indexed address,uint256)"
-  #         handler: handleNameRegistered
-  #       - event: "NameRenewed(indexed uint256,uint256)"
-  #         handler: handleNameRenewed
-  #       - event: "Transfer(indexed address,indexed address,indexed uint256)"
-  #         handler: handleNameTransferred
+  - kind: ethereum/contract
+    name: Resolver
+    network: cfx
+    source:
+      abi: Resolver
+      startBlock: 66008620  # CNS UPDATE
+      # address: "0x80E036113175a73b9D64EA575c938a3a9C468ff7"  # CNS UPDATE
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/resolver.ts
+      entities:
+        - AddrChanged
+        - MulticoinAddrChanged
+        - NameChanged
+        - AbiChanged
+        - PubkeyChanged
+        - Textchanged
+        - ContenthashChanged
+        - InterfaceChanged
+        - AuthorisationChanged
+      abis:
+        - name: Resolver
+          file: ./abis/PublicResolver.json
+      eventHandlers:
+        - event: "ABIChanged(indexed bytes32,indexed uint256)"
+          handler: handleABIChanged
+        - event: "AddrChanged(indexed bytes32,address)"
+          handler: handleAddrChanged
+        - event: "AddressChanged(indexed bytes32,uint256,bytes)"
+          handler: handleMulticoinAddrChanged
+        - event: >-
+            AuthorisationChanged(indexed bytes32,indexed address,indexed
+            address,bool)
+          handler: handleAuthorisationChanged
+        - event: "ContenthashChanged(indexed bytes32,bytes)"
+          handler: handleContentHashChanged
+        - event: "InterfaceChanged(indexed bytes32,indexed bytes4,address)"
+          handler: handleInterfaceChanged
+        - event: "NameChanged(indexed bytes32,string)"
+          handler: handleNameChanged
+        - event: "PubkeyChanged(indexed bytes32,bytes32,bytes32)"
+          handler: handlePubkeyChanged
+        - event: "TextChanged(indexed bytes32,indexed string,string)"
+          handler: handleTextChanged
+        - event: "TextChanged(indexed bytes32,indexed string,string,string)"
+          handler: handleTextChangedWithValue
+        - event: "VersionChanged(indexed bytes32,uint64)"
+          handler: handleVersionChanged
+  - kind: ethereum/contract
+    name: BaseRegistrar
+    network: cfx
+    source:
+      address: "0x8d6F06086592a74197aA6f717d401F6a3E735e25"
+      abi: BaseRegistrar
+      startBlock: 66008620
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/ethRegistrar.ts
+      entities:
+        - Registration
+        - NameRegistered
+        - NameRenewed
+        - NameTransferred
+      abis:
+        - name: BaseRegistrar
+          file: ./abis/BaseRegistrar.json
+      eventHandlers:
+        - event: "NameRegistered(indexed uint256,indexed address,uint256)"
+          handler: handleNameRegistered
+        - event: "NameRenewed(indexed uint256,uint256)"
+          handler: handleNameRenewed
+        - event: "Transfer(indexed address,indexed address,indexed uint256)"
+          handler: handleNameTransferred
   # - kind: ethereum/contract
   #   name: EthRegistrarControllerOld
   #   network: mainnet
@@ -163,57 +163,57 @@ dataSources:
   #         handler: handleNameRegisteredByControllerOld
   #       - event: "NameRenewed(string,indexed bytes32,uint256,uint256)"
   #         handler: handleNameRenewedByController
-  # - kind: ethereum/contract
-  #   name: EthRegistrarController
-  #   network: cfx
-  #   source:
-  #     abi: EthRegistrarController
-  #     startBlock: 66008620  # CNS UPDATE
-  #     address: "0x896098Bab790FdA552cE93954E76CbD8e2B1Fe0d"  # CNS UPDATE
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.5
-  #     language: wasm/assemblyscript
-  #     file: ./src/ethRegistrar.ts
-  #     entities:
-  #       - Registration
-  #     abis:
-  #       - name: EthRegistrarController
-  #         file: ./abis/EthRegistrarController.json
-  #     eventHandlers:
-  #       - event: >-
-  #           NameRegistered(string,indexed bytes32,indexed
-  #           address,uint256,uint256,uint256)
-  #         handler: handleNameRegisteredByController
-  #       - event: "NameRenewed(string,indexed bytes32,uint256,uint256)"
-  #         handler: handleNameRenewedByController
-  # - kind: ethereum/contract
-  #   name: NameWrapper
-  #   network: cfx
-  #   source:
-  #     abi: NameWrapper
-  #     startBlock: 66008620 # CNS UPDATE
-  #     address: "0x86c9Ed9417E696D393f682373E2FDE0cd9b11cFC"  # CNS UPDATE
-  #   mapping:
-  #     kind: ethereum/events
-  #     apiVersion: 0.0.5
-  #     language: wasm/assemblyscript
-  #     file: ./src/nameWrapper.ts
-  #     entities:
-  #       - NameWrapper
-  #     abis:
-  #       - name: NameWrapper
-  #         file: ./abis/NameWrapper.json
-  #     eventHandlers:
-  #       - event: "NameWrapped(indexed bytes32,bytes,address,uint32,uint64)"
-  #         handler: handleNameWrapped
-  #       - event: "NameUnwrapped(indexed bytes32,address)"
-  #         handler: handleNameUnwrapped
-  #       - event: "FusesSet(indexed bytes32,uint32)"
-  #         handler: handleFusesSet
-  #       - event: "ExpiryExtended(indexed bytes32,uint64)"
-  #         handler: handleExpiryExtended
-  #       - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
-  #         handler: handleTransferSingle
-  #       - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
-  #         handler: handleTransferBatch
+  - kind: ethereum/contract
+    name: EthRegistrarController
+    network: cfx
+    source:
+      abi: EthRegistrarController
+      startBlock: 66008620  # CNS UPDATE
+      address: "0x896098Bab790FdA552cE93954E76CbD8e2B1Fe0d"  # CNS UPDATE
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/ethRegistrar.ts
+      entities:
+        - Registration
+      abis:
+        - name: EthRegistrarController
+          file: ./abis/EthRegistrarController.json
+      eventHandlers:
+        - event: >-
+            NameRegistered(string,indexed bytes32,indexed
+            address,uint256,uint256,uint256)
+          handler: handleNameRegisteredByController
+        - event: "NameRenewed(string,indexed bytes32,uint256,uint256)"
+          handler: handleNameRenewedByController
+  - kind: ethereum/contract
+    name: NameWrapper
+    network: cfx
+    source:
+      abi: NameWrapper
+      startBlock: 66008620 # CNS UPDATE
+      address: "0x86c9Ed9417E696D393f682373E2FDE0cd9b11cFC"  # CNS UPDATE
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/nameWrapper.ts
+      entities:
+        - NameWrapper
+      abis:
+        - name: NameWrapper
+          file: ./abis/NameWrapper.json
+      eventHandlers:
+        - event: "NameWrapped(indexed bytes32,bytes,address,uint32,uint64)"
+          handler: handleNameWrapped
+        - event: "NameUnwrapped(indexed bytes32,address)"
+          handler: handleNameUnwrapped
+        - event: "FusesSet(indexed bytes32,uint32)"
+          handler: handleFusesSet
+        - event: "ExpiryExtended(indexed bytes32,uint64)"
+          handler: handleExpiryExtended
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+        - event: TransferBatch(indexed address,indexed address,indexed address,uint256[],uint256[])
+          handler: handleTransferBatch
